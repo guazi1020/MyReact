@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {render} from 'react-dom'
 import PropTypes from 'prop-types';
 /**
- * 单元控
+ * 单元控件
  */
 
 const buttonStyle = {

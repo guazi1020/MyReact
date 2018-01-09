@@ -11,7 +11,7 @@ class ComProps extends Component{
     } 
     render() {
         const wec=<this.Welcome name='dd'/>;
-        return (
+        return (     
             <div>
                {wec}
             </div>

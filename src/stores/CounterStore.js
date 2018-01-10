@@ -1,3 +1,7 @@
+import AppDispatcher from '../AppDispatcher';
+
+
+
 const counterValues={
     'First':0,
     'Second':10,
@@ -16,5 +20,14 @@ const counterStore=Object.assign({},EventEmitter.prototype,{
     removeChangeListener:function(){    //删除监听函数
         this.rermoveListener(CHANGE_EVENT,callback);
     }
-})
+});
+CounterStroe.dispatchToken=AppDispatcher.register((action)=>{
+    if(action.type==ActionTypes.INCREMENT){
+        counterValues[action.counterCaption]++;
+        CounterStore.emitChange();
+    }else if (action.type===ActionTypes.DECREMENT){
+        counterValues[action.counterCaption]--;
+        CounterStroe.emitChange();
+    }
+});
 
